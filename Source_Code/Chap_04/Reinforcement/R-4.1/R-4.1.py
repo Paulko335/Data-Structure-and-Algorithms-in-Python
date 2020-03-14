@@ -1,11 +1,12 @@
-#R-4.1
+# R-4.1
 # Describe a recursive algorithm for finding the maximum element in a sequence,
 # S, of n elements. What is your running time and space usage?
 
-# Running time is O(nlog(n))
+# Running time is O(n log(n))
 # Space usage is O(log(n))
 
 import random
+
 
 def get_max_recursively(sequence):
     if len(sequence) == 1:
@@ -25,5 +26,6 @@ random.shuffle(sequence)
 
 if max(sequence) == get_max_recursively(sequence):
     print(True)
+
 
 # -> It prints True
