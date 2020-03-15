@@ -27,7 +27,7 @@ for new_int in range(100, 20000, 500):
     for func_index, func_avg_times in enumerate(avg_times_lst, start=1):
 
         stmt = """func{}({})""".format(func_index, new_int)
-        setup = """from list_comprehension_vs_append import func{}""".format(func_index, new_int, new_int)
+        setup = """from list_comprehension_vs_append_2_23 import func{}""".format(func_index, new_int, new_int)
 
         t = timeit.Timer(stmt, setup)
 

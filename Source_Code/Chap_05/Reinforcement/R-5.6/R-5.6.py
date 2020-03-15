@@ -8,7 +8,8 @@
 # shifted into their final position during that operation, thereby avoiding the
 # subsequent shifting.
 
-from dynamic_array import DynamicArray
+from dynamic_array_5_6 import DynamicArray
+
 
 class Dynamic_Array_5_6(DynamicArray):
 
@@ -20,7 +21,7 @@ class Dynamic_Array_5_6(DynamicArray):
         # (for simplicity, we assume 0 <= k <= n in this verion)
 
         if self._n == self._capacity:                  # not enough room
-            #self._resize(2 * self._capacity)             # so double capacity
+            #self._resize(2 * self._capacity)          # so double capacity
             B = self._make_array(2 * self._capacity)
             for i in range(k):  # for each existing value
                 B[i] = self._A[i]

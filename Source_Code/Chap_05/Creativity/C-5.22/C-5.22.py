@@ -27,7 +27,7 @@ for new_int in range(100, 20000, 500):
     for func_index, func_avg_times in enumerate(avg_times_lst, start=1):
 
         stmt = """func{}(A, B)""".format(func_index)
-        setup = """from list_merging_functions import func{}
+        setup = """from list_merging_functions_5_22 import func{}
 A = ["A"] * {}
 B = ["B"] * {}""".format(func_index, new_int, new_int)
 

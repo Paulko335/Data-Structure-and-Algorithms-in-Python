@@ -7,12 +7,14 @@
 
 from random import randrange
 
+
 def shuffle(lst):
     n = len(lst)
     for index, value in enumerate(lst):
         new_index = randrange(n)
         lst[index], lst[new_index] = lst[new_index], lst[index]
     return lst
+
 
 lst = list(range(10))
 print(lst)

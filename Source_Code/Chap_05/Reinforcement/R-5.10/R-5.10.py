@@ -4,6 +4,7 @@
 # strings using a combination of the join method and an appropriate
 # comprehension syntax. Give such an implementation.
 
+
 # Original constructor
 def __init__(self, shift):
     """Construct Caesar cipher using given integer shift for rotation."""
@@ -14,6 +15,7 @@ def __init__(self, shift):
         decoder[k] = chr((k - shift) % 26 + ord('A'))
     self._forward = ''.join(encoder)  # will store as string
     self._backward = ''.join(decoder)  # since fixed
+
 
 # Equivalent constructor
 def __init__(self, shift):

@@ -3,7 +3,8 @@
 # with exactly one repeated. Describe a fast algorithm for finding the
 # integer in A that is repeated.
 
-# This algorithm runs in O(nlog(n) + n) = O(nlog(n))
+# This algorithm runs in O(n log(n) + n) = O(n log(n))
+
 
 def find_repeated(A):
     dict = {i:0 for i in range(len(A))}

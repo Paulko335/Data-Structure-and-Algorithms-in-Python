@@ -4,7 +4,7 @@
 # capacity, N, of the array by half any time the number of elements in the
 # array goes below N/4.
 
-from dynamic_array import DynamicArray
+from dynamic_array_5_16 import DynamicArray
 
 class DynamicArray_5_16(DynamicArray):
 
@@ -21,9 +21,8 @@ class DynamicArray_5_16(DynamicArray):
             if self._n < self._capacity / 4:
                 self._resize(self._capacity // 2)
 
+
 my_arr = DynamicArray_5_16()
 
 my_arr.append(0)
 print(my_arr.pop())
-print(my_arr.pop())
-

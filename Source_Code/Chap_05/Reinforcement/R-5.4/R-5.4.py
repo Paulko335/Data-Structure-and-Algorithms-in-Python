@@ -3,7 +3,8 @@
 # use of negative indices with getitem . Update that method to better
 # match the semantics of a Python list.
 
-from dynamic_array import DynamicArray
+from dynamic_array_5_4 import DynamicArray
+
 
 class DynamicArray_5_4(DynamicArray):
 
@@ -15,6 +16,7 @@ class DynamicArray_5_4(DynamicArray):
         if not -self._n <= k < self._n:
           raise IndexError('invalid index')
         return self._A[k]                              # retrieve from array
+
 
 dyn_arr = DynamicArray_5_4()
 dyn_arr.append(1)

@@ -5,8 +5,8 @@
 # Greek, Russian, or Hebrew
 
 
-#encoder[k] = chr((k + shift) % 26 + ord('A'))
-#decoder[k] = chr((k - shift) % 26 + ord('A'))
+# encoder[k] = chr((k + shift) % 26 + ord('A'))
+# decoder[k] = chr((k - shift) % 26 + ord('A'))
 
 print("""
 The original encoder and decoder use ord('A').

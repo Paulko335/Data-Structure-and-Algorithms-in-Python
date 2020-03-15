@@ -4,7 +4,7 @@
 # set, represented as a list of lists.
 
 n = 3
-my_list = [[n*j + i  for i in range(3)] for j in range(3)]
+my_list = [[n*j + i for i in range(3)] for j in range(3)]
 print(my_list)
 
 total = sum([sum(line) for line in my_list])

@@ -42,18 +42,18 @@ for new_int in range(5000, 100000, 5000):
     for func_index, func_avg_times in enumerate(avg_times_lst, start=1):
 
         stmt = """func{}(document)""".format(func_index)
-        setup = """from string_composition_functions import func{}
+        setup = """from string_composition_functions_5_21 import func{}
 document = "A" * {} """.format(func_index, new_int)
 
         t = timeit.Timer(stmt, setup)
 
         # repeat multiple times for every list length to obtain average times
         number = 30
-        total_time = sum(t.repeat(number, 1)) # execute once per repeat to measure only the function run time
+        total_time = sum(t.repeat(number, 1))  # execute once per repeat to measure only the function run time
         avg_time = total_time / number
 
         # Append y-axis values
-        func_avg_times.append(avg_time) #(new_int * np.log2(new_int))) #
+        func_avg_times.append(avg_time)
 
 
 # plot every result
