@@ -2,7 +2,7 @@
 # Implement a function that reverses a list of elements by pushing them onto
 # a stack in one order, and writing them back to the list in reversed order.
 
-from array_stack import ArrayStack
+from array_stack_6_5 import ArrayStack
 
 def reverse(lst):
     S = ArrayStack()
