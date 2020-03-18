@@ -1,7 +1,10 @@
-# This script needs to be placed inside the directory of a chapter to work, ex: inside chap_1
-
+# This script needs to be placed inside the directory of a chapter to work, ex: inside Chap_1
+# Chap_1 folder must be empty before running this script
+# It creates directories for every exercise in the chapter
+# Set the parameters to the correct numbers for exericises and chapter
 import os
 
+# Parameters
 chapter = 6
 R = [i for i in range(1, 15)]
 C = [i for i in range(15, 32)]
