@@ -21,7 +21,7 @@
 
 """Basic example of an adapter class to provide a stack interface to Python's list."""
 
-from exceptions_6_25 import Empty
+from exceptions_2_27 import Empty
 
 class ArrayStack:
     """LIFO Stack implementation using a Python list as underlying storage."""
@@ -59,3 +59,4 @@ class ArrayStack:
         if self.is_empty():
             raise Empty('Stack is empty')
         return self._data.pop()               # remove last item from list
+

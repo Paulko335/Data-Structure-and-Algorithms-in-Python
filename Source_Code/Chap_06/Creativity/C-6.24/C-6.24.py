@@ -5,7 +5,6 @@
 # methods for your design?
 
 from exceptions_6_24 import Empty
-
 from array_queue_6_24 import ArrayQueue
 
 class Stack_Using_Queue:
