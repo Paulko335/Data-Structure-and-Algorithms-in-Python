@@ -1,14 +1,14 @@
 # This script needs to be placed inside the directory of a chapter to work, ex: inside Chap_1
 # Chap_1 folder must be empty before running this script
 # It creates directories for every exercise in the chapter
-# Set the parameters to the correct numbers for exericises and chapter
+# Set the parameters to the correct numbers for exercises and chapters
 import os
 
 # Parameters
-chapter = 6
-R = [i for i in range(1, 15)]
-C = [i for i in range(15, 32)]
-P = [i for i in range(32, 38)]
+chapter = 7
+R = [i for i in range(1, 24)]
+C = [i for i in range(24, 44)]
+P = [i for i in range(44, 48)]
 
 os.mkdir("Reinforcement")
 os.mkdir("Creativity")
