@@ -21,7 +21,7 @@ for number in R:
 
     script_name = "R-{}.{}".format(chapter, number)
     with open("{}/{}.py".format(dir_name, script_name), "w") as script:
-        print("#{}".format(script_name), file = script)
+        print("# {}".format(script_name), file=script)
 
 
 # Creativity
