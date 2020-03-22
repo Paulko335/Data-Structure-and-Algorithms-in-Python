@@ -1,5 +1,4 @@
 # Implementation of a circularly linked list, based on notions seen in the book
-# It is used to test the exercise's algorithm
 
 from exceptions_7_5 import Empty
 
@@ -55,21 +54,24 @@ class CircularlyLinkedList:
         self._size += 1
 
     def get_head(self):
+        """Returns the head of the list"""
         if self.is_empty():
             raise Empty("List is empty, cannot return the head")
         return self._tail._next
 
     def get_tail(self):
+        """Returns the tail of the list"""
         if self.is_empty():
             raise Empty("List is empty, cannot return the tail")
         return self._tail
 
     def rotate(self):
+        """Moves the list forward by one item"""
         if not self.is_empty():
             self._tail = self._tail._next
 
     def __str__(self):
-        """prints itself in an easily readable format"""
+        """Printing itself in an easily readable format."""
         readable_list = []
         for item in range(self._size):
             readable_list.append(str(self._tail._next._element))
@@ -78,7 +80,6 @@ class CircularlyLinkedList:
 
 
 if __name__ == "__main__":
-    print("This is the SinglyLinkedList class, here are some methods")
     CLL = CircularlyLinkedList()
     CLL.add_first(0)
     CLL.add_first(1)
@@ -99,34 +100,3 @@ if __name__ == "__main__":
 
     CLL3 = CircularlyLinkedList()
     print("Empty list:", CLL3)
-    print("\n")
-
-#####################################################################
-print("This is the beginning of the exercise R-7.5")
-
-# R-7.5
-# Implement a function that counts the number of nodes in a circularly
-# linked list.
-
-#from circularly_linked_list_7_5 import CircularlyLinkedList
-
-
-def count_nodes_CLL(circularly_linked_list):
-    if circularly_linked_list.is_empty():
-        return 0
-
-    cpt = 1
-    head = circularly_linked_list.get_head()
-    walk = head
-    while walk._next != head:
-        cpt += 1
-        walk = walk._next
-    return cpt
-
-CLL = CircularlyLinkedList()
-
-for i in range(4):
-    CLL.add_last(i)
-
-print("CLL content: {}".format(CLL))
-print("CLL has {} nodes".format(count_nodes_CLL(CLL)))
