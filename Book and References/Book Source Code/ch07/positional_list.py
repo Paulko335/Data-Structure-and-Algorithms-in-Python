@@ -28,7 +28,7 @@ class PositionalList(_DoublyLinkedBase):
   class Position:
     """An abstraction representing the location of a single element.
 
-    Note that two position instaces may represent the same inherent
+    Note that two position instances may represent the same inherent
     location in the list.  Therefore, users should always rely on
     syntax 'p == q' rather than 'p is q' when testing equivalence of
     positions.

@@ -1,4 +1,4 @@
-# Implementation of a circularly linked list, based on notions seen in the book
+# First, this is the implementation of a circularly linked list, based on notions seen in the book
 # It is used to test the exercise's algorithm
 
 from exceptions_7_5 import Empty
@@ -78,7 +78,7 @@ class CircularlyLinkedList:
 
 
 if __name__ == "__main__":
-    print("This is the SinglyLinkedList class, here are some methods")
+    print("This is the implementation of a CircularlyLinkedList class, here are some methods")
     CLL = CircularlyLinkedList()
     CLL.add_first(0)
     CLL.add_first(1)
