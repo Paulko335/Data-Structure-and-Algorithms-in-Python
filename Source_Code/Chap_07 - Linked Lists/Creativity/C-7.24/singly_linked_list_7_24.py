@@ -9,7 +9,7 @@
 #   - a get_head method to return the first node of the list if it exists
 #   - a get_tail method to return the last node of the list if it exists
 
-from exceptions_7_2 import *
+from exceptions_7_24 import *
 
 
 class SinglyLinkedList:
@@ -112,3 +112,33 @@ class SinglyLinkedList:
     def __len__(self):
         """Enables len(SLL)"""
         return self._size
+
+
+if __name__ == "__main__":
+    SLL = SinglyLinkedList()
+
+    print("SLL is empty, it contains :{}".format(SLL))                  # __str__()
+
+    for i in range(2):
+        SLL.add_last(i)                                                 # add_last() on empty and nonempty list
+    print("Added 0, 1 at the end, SSL contains: {}".format(SLL))
+
+    SLL.add_first(-1)                                                   # add_fist() on nonempty list
+    print("Added -1 at the beginning, SLL contains: {}".format(SLL))
+
+    SLL.remove_first()
+    print("Removed first element, SSL contains: {}".format(SLL))        # remove_first() on nonempty list
+
+    print(SLL.get_tail()._element)                                      # get_tail() on  nonempty list
+
+    SLL.remove_first()
+    print("Removed first element, SSL contains: {}".format(SLL))
+
+    SLL.remove_first()
+    print("Removed first element, SSL contains: {}".format(SLL))
+
+    SLL.add_first(5)                                                   # add_fist() on empty list
+    print("Added 5 at the beginning, SLL contains: {}".format(SLL))
+
+    SLL.remove_last()
+    print("Removed last element, SSL contains: {}".format(SLL))

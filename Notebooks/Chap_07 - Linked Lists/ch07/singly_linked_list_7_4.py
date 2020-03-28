@@ -60,6 +60,7 @@ class SinglyLinkedList:
         self._header._next = old_first._next
         old_first._next = None                  # helps garbage collection
         self._size -= 1
+        return old_first
 
     def remove_last(self):
         """Removes the last item of the list if it exists"""
@@ -69,8 +70,10 @@ class SinglyLinkedList:
         new_tail = self._header
         while new_tail._next._next is not None:
             new_tail = new_tail._next
+        old_tail = new_tail._next
         new_tail._next = None
         self._size -= 1
+        return old_tail
 
     def get_head(self):
         """Returns the head node of the list"""

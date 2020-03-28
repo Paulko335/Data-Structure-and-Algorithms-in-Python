@@ -9,7 +9,7 @@
 #   - a get_head method to return the first node of the list if it exists
 #   - a get_tail method to return the last node of the list if it exists
 
-from exceptions_7_2 import *
+from exceptions_7_25 import *
 
 
 class SinglyLinkedList:
