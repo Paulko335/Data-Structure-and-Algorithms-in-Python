@@ -12,7 +12,7 @@ def count_nodes(head):
         return 1 + count_nodes(head._next)
 
 
-sll = SinglyLinkedList()
+SLL = SinglyLinkedList()
 for i in range(4):
-    sll.add_last(i)
-print(count_nodes(sll.get_head()))
+    SLL.add_last(i)
+print(count_nodes(SLL.get_head()))

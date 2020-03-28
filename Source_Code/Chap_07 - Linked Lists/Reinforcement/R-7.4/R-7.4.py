@@ -14,6 +14,8 @@ from doubly_linked_base_7_4 import _DoublyLinkedBase
 
 
 def find_prev(SLL, current_node):
+    if current_node is SLL._header:
+        raise Exception("header does not have a previous node")
     prev = SLL._header
     while prev._next != current_node:
         prev = prev._next

@@ -19,7 +19,7 @@ M = SinglyLinkedList()
 
 for i in range(4):
     L.add_last(i)
-    M.add_last(i)
+    M.add_last(4 + i)
 
 print("L:", L)
 print("M:", M)
