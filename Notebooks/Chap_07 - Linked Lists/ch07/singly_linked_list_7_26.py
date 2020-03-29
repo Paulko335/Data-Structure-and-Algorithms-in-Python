@@ -1,23 +1,18 @@
-# C-7.26
-# Implement a method, concatenate(Q2) for the LinkedQueue class that
-# takes all elements of LinkedQueue Q2 and appends them to the end of the
-# original queue. The operation should run in O(1) time and should result
-# in Q2 being an empty queue.
+# Implementation of a singly link list
+# Based from scripts examples in the book, but it was never completely built
+# This class would not work correctly as is was presented.
+#
+# I added some functionalities to this class for it to work and for testing purposes:
+#   - a header to initialise the list and to avoid boundary conditions
+#   - a __str__ method easily verify the content of the list
+#   - a __len__ method to verify the length
+#   - a get_head method to return the first node of the list if it exists
+#   - a get_tail method to return the last node of the list if it exists
+#   - a tail attribute to remember access it without cycling through the list
+
+from exceptions_7_26 import *
 
 
-from exceptions_7_26 import Empty
-
-
-# First, I modified the SinglyLinkedList class to include a tail attribute.
-# It is used to access the end of the list without cycling through it.
-# I also updated method to use this new tail attribute to improve speed.
-
-# This is the new implementation:
-
-
-###############################################################################
-#               New implementation of the SinglyLinkedList class              #
-###############################################################################
 class SinglyLinkedList:
     """Singly linked list implementation"""
 
@@ -139,74 +134,3 @@ class SinglyLinkedList:
     def __len__(self):
         """Enables len(SLL)"""
         return self._size
-
-
-###############################################################################
-#           Implementation of a queue from the SinglyLinkedList (7.26)        #
-###############################################################################
-class Queue_From_Singly_Linked_List(SinglyLinkedList):
-    def __init__(self):
-        self._data = SinglyLinkedList()
-
-    def enqueue(self, e):
-        """enqueue the item e"""
-        self._data.add_last(e)
-
-    def dequeue(self):
-        """dequeue the first item enqueued"""
-        if self.is_empty():
-            raise Empty("Cannot dequeue from an empty queue")
-
-        return self._data.remove_first()._element
-
-    def first(self):
-        """returns the first item in the queue"""
-        if self.is_empty():
-            raise Empty("Empty queue does not have a first element")
-        return self._data.get_head()._element
-
-    def is_empty(self):
-        """returns True if the queue is empty"""
-        return self._data.is_empty()
-
-    def __len__(self):
-        """returns the length of the queue"""
-        return len(self._data)
-
-    def __str__(self):
-        return str(self._data)
-
-
-
-###############################################################################
-#                          Beginning of exercise 7.26                         #
-###############################################################################
-class LinkedQueueWithConcatenate(Queue_From_Singly_Linked_List):
-
-    def concatenate(self, Q2):
-        self._data.tail._next = Q2._data.get_head()
-        self._data.tail = Q2._data.tail
-        self._data._size += Q2._data._size
-
-        Q2._data = SinglyLinkedList()    # Reset Q2
-
-
-Q1 = LinkedQueueWithConcatenate()
-Q2 = LinkedQueueWithConcatenate()
-
-for i in range(4):
-    Q1.enqueue(i)
-    Q2.enqueue(i + 4)
-
-print("Q1: ", Q1)
-print("Q1 first is:", Q1.first())
-print("Q2: ", Q2)
-print("Q2 first is:", Q2.first())
-
-
-print("Using concatenate method:")
-Q1.concatenate(Q2)
-
-print("Q1: ", Q1)
-print("Q1 first is:", Q1.first())
-print("Q2: ", Q2)

@@ -13,20 +13,20 @@ class Queue_From_Singly_Linked_List():
 
     def enqueue(self, e):
         """enqueue the item e"""
-        self._data.add_first(e)
+        self._data.add_last(e)
 
     def dequeue(self):
         """dequeue the first item enqueued"""
         if self.is_empty():
-            raise Empty("Cannot pop from an empty stack")
-        return self._data.remove_last()._element
+            raise Empty("Cannot dequeue from an empty queue")
+        return self._data.remove_first()._element
 
     def first(self):
         """returns the first item in the queue"""
         if self.is_empty():
-            raise Empty("Cannot pop from an empty stack")
-        tail = self._data.get_tail()
-        return tail._element
+            raise Empty("Empty queue has no first element")
+        head = self._data.get_head()
+        return head._element
 
     def is_empty(self):
         """returns True if the queue is empty"""
